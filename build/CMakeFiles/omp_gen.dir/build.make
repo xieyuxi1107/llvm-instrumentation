@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xieyuxi/582_fence_pass
+CMAKE_SOURCE_DIR = /home/xieyuxi/llvm-instrumentation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xieyuxi/582_fence_pass/build
+CMAKE_BINARY_DIR = /home/xieyuxi/llvm-instrumentation/build
 
 # Utility rule file for omp_gen.
 
@@ -67,6 +67,6 @@ CMakeFiles/omp_gen.dir/clean:
 .PHONY : CMakeFiles/omp_gen.dir/clean
 
 CMakeFiles/omp_gen.dir/depend:
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/582_fence_pass /home/xieyuxi/582_fence_pass /home/xieyuxi/582_fence_pass/build /home/xieyuxi/582_fence_pass/build /home/xieyuxi/582_fence_pass/build/CMakeFiles/omp_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/llvm-instrumentation /home/xieyuxi/llvm-instrumentation /home/xieyuxi/llvm-instrumentation/build /home/xieyuxi/llvm-instrumentation/build /home/xieyuxi/llvm-instrumentation/build/CMakeFiles/omp_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/omp_gen.dir/depend
 

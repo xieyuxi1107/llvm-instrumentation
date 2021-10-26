@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xieyuxi/582_fence_pass
+CMAKE_SOURCE_DIR = /home/xieyuxi/llvm-instrumentation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xieyuxi/582_fence_pass/build
+CMAKE_BINARY_DIR = /home/xieyuxi/llvm-instrumentation/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/xieyuxi/582_fence_pass/build/CMakeFiles /home/xieyuxi/582_fence_pass/build/fencePass/CMakeFiles/progress.marks
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xieyuxi/582_fence_pass/build/CMakeFiles 0
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/xieyuxi/llvm-instrumentation/build/CMakeFiles /home/xieyuxi/llvm-instrumentation/build/fencePass/CMakeFiles/progress.marks
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xieyuxi/llvm-instrumentation/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/clean
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/preinstall
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/preinstall
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/rule:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/rule
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/rule
 .PHONY : fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/rule
 
 # Convenience name for target.
@@ -168,12 +168,12 @@ install-LLVMFENCE-stripped: fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/
 
 # fast build rule for target.
 install-LLVMFENCE-stripped/fast:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/build.make fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/build
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/build.make fencePass/CMakeFiles/install-LLVMFENCE-stripped.dir/build
 .PHONY : install-LLVMFENCE-stripped/fast
 
 # Convenience name for target.
 fencePass/CMakeFiles/install-LLVMFENCE.dir/rule:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/install-LLVMFENCE.dir/rule
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/install-LLVMFENCE.dir/rule
 .PHONY : fencePass/CMakeFiles/install-LLVMFENCE.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ install-LLVMFENCE: fencePass/CMakeFiles/install-LLVMFENCE.dir/rule
 
 # fast build rule for target.
 install-LLVMFENCE/fast:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/install-LLVMFENCE.dir/build.make fencePass/CMakeFiles/install-LLVMFENCE.dir/build
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/install-LLVMFENCE.dir/build.make fencePass/CMakeFiles/install-LLVMFENCE.dir/build
 .PHONY : install-LLVMFENCE/fast
 
 # Convenience name for target.
 fencePass/CMakeFiles/LLVMFENCE.dir/rule:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/LLVMFENCE.dir/rule
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f CMakeFiles/Makefile2 fencePass/CMakeFiles/LLVMFENCE.dir/rule
 .PHONY : fencePass/CMakeFiles/LLVMFENCE.dir/rule
 
 # Convenience name for target.
@@ -198,7 +198,7 @@ LLVMFENCE: fencePass/CMakeFiles/LLVMFENCE.dir/rule
 
 # fast build rule for target.
 LLVMFENCE/fast:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/build
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/build
 .PHONY : LLVMFENCE/fast
 
 fencePass.o: fencePass.cpp.o
@@ -207,7 +207,7 @@ fencePass.o: fencePass.cpp.o
 
 # target to build an object file
 fencePass.cpp.o:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.o
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.o
 .PHONY : fencePass.cpp.o
 
 fencePass.i: fencePass.cpp.i
@@ -216,7 +216,7 @@ fencePass.i: fencePass.cpp.i
 
 # target to preprocess a source file
 fencePass.cpp.i:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.i
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.i
 .PHONY : fencePass.cpp.i
 
 fencePass.s: fencePass.cpp.s
@@ -225,7 +225,7 @@ fencePass.s: fencePass.cpp.s
 
 # target to generate assembly for a file
 fencePass.cpp.s:
-	cd /home/xieyuxi/582_fence_pass/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.s
+	cd /home/xieyuxi/llvm-instrumentation/build && $(MAKE) -f fencePass/CMakeFiles/LLVMFENCE.dir/build.make fencePass/CMakeFiles/LLVMFENCE.dir/fencePass.cpp.s
 .PHONY : fencePass.cpp.s
 
 # Help Target
@@ -257,6 +257,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

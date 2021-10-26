@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xieyuxi/582_fence_pass
+CMAKE_SOURCE_DIR = /home/xieyuxi/llvm-instrumentation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xieyuxi/582_fence_pass/build
+CMAKE_BINARY_DIR = /home/xieyuxi/llvm-instrumentation/build
 
 # Utility rule file for install-LLVMFENCE.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/xieyuxi/582_fence_pass/build
 include fencePass/CMakeFiles/install-LLVMFENCE.dir/progress.make
 
 fencePass/CMakeFiles/install-LLVMFENCE:
-	cd /home/xieyuxi/582_fence_pass/build/fencePass && /usr/bin/cmake -DCMAKE_INSTALL_COMPONENT="LLVMFENCE" -P /home/xieyuxi/582_fence_pass/build/cmake_install.cmake
+	cd /home/xieyuxi/llvm-instrumentation/build/fencePass && /usr/bin/cmake -DCMAKE_INSTALL_COMPONENT="LLVMFENCE" -P /home/xieyuxi/llvm-instrumentation/build/cmake_install.cmake
 
 install-LLVMFENCE: fencePass/CMakeFiles/install-LLVMFENCE
 install-LLVMFENCE: fencePass/CMakeFiles/install-LLVMFENCE.dir/build.make
@@ -67,10 +67,10 @@ fencePass/CMakeFiles/install-LLVMFENCE.dir/build: install-LLVMFENCE
 .PHONY : fencePass/CMakeFiles/install-LLVMFENCE.dir/build
 
 fencePass/CMakeFiles/install-LLVMFENCE.dir/clean:
-	cd /home/xieyuxi/582_fence_pass/build/fencePass && $(CMAKE_COMMAND) -P CMakeFiles/install-LLVMFENCE.dir/cmake_clean.cmake
+	cd /home/xieyuxi/llvm-instrumentation/build/fencePass && $(CMAKE_COMMAND) -P CMakeFiles/install-LLVMFENCE.dir/cmake_clean.cmake
 .PHONY : fencePass/CMakeFiles/install-LLVMFENCE.dir/clean
 
 fencePass/CMakeFiles/install-LLVMFENCE.dir/depend:
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/582_fence_pass /home/xieyuxi/582_fence_pass/fencePass /home/xieyuxi/582_fence_pass/build /home/xieyuxi/582_fence_pass/build/fencePass /home/xieyuxi/582_fence_pass/build/fencePass/CMakeFiles/install-LLVMFENCE.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/llvm-instrumentation /home/xieyuxi/llvm-instrumentation/fencePass /home/xieyuxi/llvm-instrumentation/build /home/xieyuxi/llvm-instrumentation/build/fencePass /home/xieyuxi/llvm-instrumentation/build/fencePass/CMakeFiles/install-LLVMFENCE.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : fencePass/CMakeFiles/install-LLVMFENCE.dir/depend
 

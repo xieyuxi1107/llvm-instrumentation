@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xieyuxi/582_fence_pass
+CMAKE_SOURCE_DIR = /home/xieyuxi/llvm-instrumentation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xieyuxi/582_fence_pass/build
+CMAKE_BINARY_DIR = /home/xieyuxi/llvm-instrumentation/build
 
 # Utility rule file for intrinsics_gen.
 
@@ -67,6 +67,6 @@ CMakeFiles/intrinsics_gen.dir/clean:
 .PHONY : CMakeFiles/intrinsics_gen.dir/clean
 
 CMakeFiles/intrinsics_gen.dir/depend:
-	cd /home/xieyuxi/582_fence_pass/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/582_fence_pass /home/xieyuxi/582_fence_pass /home/xieyuxi/582_fence_pass/build /home/xieyuxi/582_fence_pass/build /home/xieyuxi/582_fence_pass/build/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xieyuxi/llvm-instrumentation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xieyuxi/llvm-instrumentation /home/xieyuxi/llvm-instrumentation /home/xieyuxi/llvm-instrumentation/build /home/xieyuxi/llvm-instrumentation/build /home/xieyuxi/llvm-instrumentation/build/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/intrinsics_gen.dir/depend
 

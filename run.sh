@@ -1,4 +1,4 @@
-PATH2LIB=/home/xieyuxi/582_fence_pass/build/fencePass/LLVMFENCE.so        # Specify your build directory in the project
+PATH2LIB=~/llvm-instrumentation/build/fencePass/LLVMFENCE.so        # Specify your build directory in the project
 PASS=-fencePass                 # Choose either -fplicm-correctness or -fplicm-performance
 
 # Delete outputs from previous run.
