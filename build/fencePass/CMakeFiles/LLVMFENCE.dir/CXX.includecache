@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xieyuxi/582_fence_pass/fencePass/fencePass.cpp
+llvm/ADT/SmallVector.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/ADT/SmallVector.h
+llvm/IR/DerivedTypes.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/DerivedTypes.h
+llvm/Pass.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/Pass.h
+llvm/IR/Function.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/Function.h
+llvm/IR/IRBuilder.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/IRBuilder.h
+llvm/IR/LLVMContext.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/LLVMContext.h
+llvm/IR/Module.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/Module.h
+llvm/IR/LLVMContext.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/IR/LLVMContext.h
+llvm/Support/raw_ostream.h
+/home/xieyuxi/582_fence_pass/fencePass/llvm/Support/raw_ostream.h
+

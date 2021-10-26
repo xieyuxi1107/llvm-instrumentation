@@ -1,0 +1,11 @@
+Before fence1
+xieyuxi: print_trace for 1
+After fence1
+Before fence2
+xieyuxi: print_trace for 1
+After fence2
+5 
+xieyuxi: print_trace for 2
+flush_pm called 
+xieyuxi: print_trace for 2
+flush_pm called 
