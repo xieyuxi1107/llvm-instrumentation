@@ -16,28 +16,67 @@ int fence = 1;
 int flush = 2;
 StringRef flush_function_name = StringRef("flush_pm");
 
+std::vector<StringRef> instrumenation_functions = {StringRef("print_trace"), StringRef("print_trace_addr")};
+
+Type* getIntPtrTy(Module& M){
+  LLVMContext *C = &(M.getContext());
+  int LongSize = M.getDataLayout().getPointerSizeInBits();
+  Type* IntptrTy = Type::getIntNTy(*C, LongSize);
+  return IntptrTy;
+}
+
 static FunctionCallee initializeCallbacks(Module& M){
   LLVMContext *C = &(M.getContext());
   IRBuilder<> IRB(*C);
   Type * VoidTy = IRB.getVoidTy();
   Type * IntTy = IRB.getInt32Ty();
-
-  // Type * VoidTy = Type::getVoidTy(M.getContext());
   FunctionType * func_type = FunctionType::get(VoidTy,{IntTy},false);	
 
   return M.getOrInsertFunction("print_trace", func_type);
 }
 
+static FunctionCallee initializeStoreCallbacks(Module& M, Type * IntptrTy){
+  LLVMContext *C = &(M.getContext());
+  IRBuilder<> IRB(*C);
+  Type * VoidTy = IRB.getVoidTy();
+  Type * IntTy = IRB.getInt32Ty();
+  // Type * IntptrTy = IRB.getIntPtrTy();
+
+  // SmallVector<Type *, 2> Args = {IntTy, IntptrTy};
+
+  // Type * VoidTy = Type::getVoidTy(M.getContext());
+  FunctionType * func_type = FunctionType::get(VoidTy,{IntTy, IntptrTy},false);	
+
+  return M.getOrInsertFunction("print_trace_addr", func_type);
+}
+
+bool instrumented_function(Function &F){
+  for(auto instrumenation_function : instrumenation_functions){
+    if (F.getName().equals(instrumenation_function)){
+      return true;
+    }
+  }
+  return false;
+}
+
 bool instrumentFunction(Function &F){
+  if (instrumented_function(F)){
+    return false;
+  }
+
   bool changed = false;
-  FunctionCallee callback_func = initializeCallbacks(*F.getParent()); // TODO: create instrument function
-  
+  Type * IntptrTy = getIntPtrTy(*F.getParent());
+  FunctionCallee callback_func_store = initializeStoreCallbacks(*F.getParent(), IntptrTy); // TODO: create instrument function
+  FunctionCallee callback_func = initializeCallbacks(*F.getParent());
+
+  errs().write_escaped(F.getName()) <<" \n";
+
   // instrument flush function
   if (F.getName().contains(flush_function_name)){
-    errs()<<"found flush \n";
+    // errs()<<"found flush \n";
     Instruction& first_instr = *(F.getEntryBlock().getFirstInsertionPt());
     IRBuilder<> IRB(&first_instr);
-    IRB.CreateCall(callback_func, ConstantInt::get(IRB.getInt32Ty(), flush)); 
+    IRB.CreateCall(callback_func, {ConstantInt::get(IRB.getInt32Ty(), flush)}); 
     changed = true;
     return changed;
   }
@@ -47,14 +86,20 @@ bool instrumentFunction(Function &F){
       // instrument fence instruction
       if(Inst.getOpcode() == Instruction::Fence){
         IRBuilder<> IRB(&Inst);
-        IRB.CreateCall(callback_func, ConstantInt::get(IRB.getInt32Ty(), fence)); 
+        IRB.CreateCall(callback_func, {ConstantInt::get(IRB.getInt32Ty(), fence)}); 
 
-        // Instruction* newInst = CallInst::Create(callback_func, "", &Inst);
         changed = true;
-        // errs() << "xieyuxi: instrumented ";
-        // errs().write_escaped(F.getName()) <<" ";
-        // errs() << BB.getName() << "\n ";
       } // if fence instr
+
+      // instrument store instruction
+      if(Inst.getOpcode() == Instruction::Store){
+        IRBuilder<> IRB(&Inst);
+        Value* Addr  = (&Inst.getOperandUse(1))->get(); //?? Is it the way to do it??
+        Value *AddrLong = IRB.CreatePointerCast(Addr, IntptrTy);
+        IRB.CreateCall(callback_func_store, {ConstantInt::get(IRB.getInt32Ty(), store), AddrLong}); 
+        changed = true;
+        
+      } // if store instr
     }
   }
   return changed;

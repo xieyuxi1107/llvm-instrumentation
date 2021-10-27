@@ -1,7 +1,59 @@
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711260
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711256
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711248
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 4210764
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 4210768
 Before fence1
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711212
 xieyuxi: print_trace for 1
 After fence1
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711136
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711135
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711128
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711160
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711159
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711152
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711020
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711016
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711148
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711147
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 4210772
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711136
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711132
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711160
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711156
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711052
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711048
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711152
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711151
 Before fence2
+xieyuxi: print_trace for 0
+xieyuxi: store addr is 140728959711212
 xieyuxi: print_trace for 1
 After fence2
 5 
