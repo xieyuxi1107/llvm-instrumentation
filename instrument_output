@@ -1,59 +1,59 @@
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711260
+xieyuxi: store addr is 140726470804300
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711256
+xieyuxi: store addr is 140726470804296
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711248
+xieyuxi: store addr is 140726470804288
 xieyuxi: print_trace for 0
 xieyuxi: store addr is 4210764
 xieyuxi: print_trace for 0
 xieyuxi: store addr is 4210768
 Before fence1
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711212
+xieyuxi: store addr is 140726470804252
 xieyuxi: print_trace for 1
 After fence1
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711136
+xieyuxi: store addr is 140726470804176
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711135
+xieyuxi: store addr is 140726470804175
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711128
+xieyuxi: store addr is 140726470804168
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711160
+xieyuxi: store addr is 140726470804200
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711159
+xieyuxi: store addr is 140726470804199
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711152
+xieyuxi: store addr is 140726470804192
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711020
+xieyuxi: store addr is 140726470804060
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711016
+xieyuxi: store addr is 140726470804056
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711148
+xieyuxi: store addr is 140726470804188
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711147
+xieyuxi: store addr is 140726470804187
 xieyuxi: print_trace for 0
 xieyuxi: store addr is 4210772
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711136
+xieyuxi: store addr is 140726470804176
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711132
+xieyuxi: store addr is 140726470804172
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711160
+xieyuxi: store addr is 140726470804200
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711156
+xieyuxi: store addr is 140726470804196
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711052
+xieyuxi: store addr is 140726470804076
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711048
+xieyuxi: store addr is 140726470804072
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711152
+xieyuxi: store addr is 140726470804192
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711151
+xieyuxi: store addr is 140726470804191
 Before fence2
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140728959711212
+xieyuxi: store addr is 140726470804252
 xieyuxi: print_trace for 1
 After fence2
 5 

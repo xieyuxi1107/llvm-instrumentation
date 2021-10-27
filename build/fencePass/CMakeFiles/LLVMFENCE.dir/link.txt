@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -Wl,-rpath-link,  -Wl,-O3 -Wl,--gc-sections -shared  -o LLVMFENCE.so CMakeFiles/LLVMFENCE.dir/fencePass.cpp.o  -Wl,-rpath,"\$ORIGIN/../lib" 

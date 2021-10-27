@@ -1,4 +1,4 @@
-PATH2LIB=~/llvm-instrumentation/build/fencePass/LLVMFENCE.so        # Specify your build directory in the project
+PATH2LIB=~/shared/llvm-instrumentation/build/fencePass/LLVMFENCE.so        # Specify your build directory in the project
 PASS=-fencePass                 # Choose either -fplicm-correctness or -fplicm-performance
 
 # Delete outputs from previous run.
@@ -20,7 +20,7 @@ llvm-link print.bc ${1}.bc -S -o=${1}.linked.bc
 clang++ ${1}.bc -o ${1}
 
 # Apply fence pass
-opt -o ${1}.instrument.bc -load ${PATH2LIB} ${PASS} < ${1}.linked.bc > /dev/null
+opt-10 -load ${PATH2LIB} ${PASS} -o ${1}.instrument.bc < ${1}.linked.bc > /dev/null
 
 # Generate binary executable after fence pass
 clang++ ${1}.instrument.bc -o ${1}.instrument
