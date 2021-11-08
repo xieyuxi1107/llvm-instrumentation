@@ -12,5 +12,4 @@ test:
 
 clean:
 	make -C $(KDIR) M=`pwd` clean
-	sudo rmmod lkm_example.ko
 

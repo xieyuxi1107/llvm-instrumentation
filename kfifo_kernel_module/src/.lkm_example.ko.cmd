@@ -1,1 +1,0 @@
-cmd_/home/vagrant/src/lkm_example.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/vagrant/src/lkm_example.ko /home/vagrant/src/lkm_example.o /home/vagrant/src/lkm_example.mod.o;  true

@@ -78,12 +78,12 @@ static int __init kfifo_squint_init(void) {
 	return 0;
 }
 
-static void __exit kfifo_squint_init(void) {
+static void __exit kfifo_squint_exit(void) {
 	printk(KERN_ERR "@ Squint: Starting lkm_example_exit\n");
 	printk(KERN_INFO "@ Squint: kfifo_free");
 	remove_proc_entry(PROC_NAME, NULL);
 	kfifo_free(&squint_dev);
 }
 
-module_init(lkm_example_init);
-module_exit(lkm_example_exit);
+module_init(kfifo_squint_init);
+module_exit(kfifo_squint_exit);
