@@ -198,3 +198,16 @@ cat /proc/squint
 cat /proc/squint
 cat /proc/squint
 python3
+cd src/
+ls
+make test
+make test
+make clean
+make
+make test
+make clean
+make
+make
+make test
+git status
+exit
