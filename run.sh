@@ -33,3 +33,8 @@ clang++ ${1}.instrument.bc -o ${1}.instrument
 
 # Cleanup
 rm -f *.bc ${1} ${1}.instrument
+
+
+# Instrument source code (*.cpp) without bitcode, create executatable test_fence
+# clang -O1 -fexperimental-new-pass-manager -fpass-plugin=/home/xieyuxi/shared/llvm-instrumentation/build/fencePass/LLVMFENCE.so test_fence.cpp print.c -o test_fence
+# ./test_fence > instrument_output

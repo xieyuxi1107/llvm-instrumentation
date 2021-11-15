@@ -1,59 +1,13 @@
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804300
+xieyuxi: store addr is 4210748
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804296
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804288
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 4210764
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 4210768
+xieyuxi: store addr is 4210752
 Before fence1
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804252
 xieyuxi: print_trace for 1
 After fence1
 xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804176
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804175
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804168
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804200
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804199
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804192
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804060
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804056
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804188
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804187
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 4210772
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804176
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804172
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804200
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804196
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804076
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804072
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804192
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804191
+xieyuxi: store addr is 4210756
 Before fence2
-xieyuxi: print_trace for 0
-xieyuxi: store addr is 140726470804252
 xieyuxi: print_trace for 1
 After fence2
 5 

@@ -1,15 +1,27 @@
+#include "llvm/IR/Function.h"
+#include "llvm/IR/LegacyPassManager.h"
+#include "llvm/Pass.h"
+#include "llvm/Passes/PassBuilder.h"
+#include "llvm/Passes/PassPlugin.h"
+#include "llvm/Support/CommandLine.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/Transforms/IPO/PassManagerBuilder.h"
+
+
 #include "llvm/ADT/SmallVector.h"
 
 #include "llvm/IR/DerivedTypes.h"
-#include "llvm/Pass.h"
 #include "llvm/IR/Function.h"
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/LLVMContext.h"
 #include "llvm/IR/Module.h"
-#include "llvm/IR/LLVMContext.h"
-#include "llvm/Support/raw_ostream.h"
+#include "llvm/IR/PassManager.h"
+
 
 using namespace llvm;
+
+
+namespace {
 
 int store = 0;
 int fence = 1;
@@ -61,6 +73,8 @@ bool instrumented_function(Function &F){
 
 bool instrumentFunction(Function &F){
   if (instrumented_function(F)){
+    errs()<<"skipped: ";
+    errs().write_escaped(F.getName()) <<" \n";
     return false;
   }
 
@@ -71,15 +85,15 @@ bool instrumentFunction(Function &F){
 
   errs().write_escaped(F.getName()) <<" \n";
 
-  // instrument flush function
-  if (F.getName().contains(flush_function_name)){
-    // errs()<<"found flush \n";
-    Instruction& first_instr = *(F.getEntryBlock().getFirstInsertionPt());
-    IRBuilder<> IRB(&first_instr);
-    IRB.CreateCall(callback_func, {ConstantInt::get(IRB.getInt32Ty(), flush)}); 
-    changed = true;
-    return changed;
-  }
+  // // instrument flush function
+  // if (F.getName().contains(flush_function_name)){
+  //   errs()<<"found flush \n";
+  //   Instruction& first_instr = *(F.getEntryBlock().getFirstInsertionPt());
+  //   IRBuilder<> IRB(&first_instr);
+  //   IRB.CreateCall(callback_func, {ConstantInt::get(IRB.getInt32Ty(), flush)}); 
+  //   changed = true;
+  //   return changed;
+  // }
   
   for (auto &BB : F) {
     for (auto &Inst : BB) {
@@ -105,18 +119,54 @@ bool instrumentFunction(Function &F){
   return changed;
 }
 
-namespace {
-struct FencePass : public FunctionPass {
-  static char ID;
-  FencePass() : FunctionPass(ID) {}
 
-  bool runOnFunction(Function &F) override {
-    return instrumentFunction(F);
+struct StoreFenceInstru : PassInfoMixin<StoreFenceInstru> {
+  PreservedAnalyses run(Function &F, FunctionAnalysisManager &) {
+    if (!instrumentFunction(F))
+      return PreservedAnalyses::all();
+    return PreservedAnalyses::none();
   }
-}; // end of struct Fence
-}  // end of anonymous namespace
+};
 
-char FencePass::ID = 0;
-static RegisterPass<FencePass> X("fencePass", "Fence Pass",
-                             false /* Only looks at CFG */,
-                             false /* Analysis Pass */);
+
+struct FlushInstru : PassInfoMixin<FlushInstru> {
+  PreservedAnalyses run(Function &F, FunctionAnalysisManager &) {
+      // instrument flush function
+    FunctionCallee callback_func = initializeCallbacks(*F.getParent());
+    if (F.getName().contains(flush_function_name)){
+      errs()<<"found flush \n";
+      Instruction& first_instr = *(F.getEntryBlock().getFirstInsertionPt());
+      IRBuilder<> IRB(&first_instr);
+      IRB.CreateCall(callback_func, {ConstantInt::get(IRB.getInt32Ty(), flush)}); 
+      return PreservedAnalyses::all();
+    }
+    return PreservedAnalyses::none();
+  }
+};
+
+} // namespace
+
+/* New PM Registration */
+llvm::PassPluginLibraryInfo getInstruPluginInfo() {
+  return {LLVM_PLUGIN_API_VERSION, "InstruPass", LLVM_VERSION_STRING,
+          [](PassBuilder &PB) {
+            PB.registerVectorizerStartEPCallback(
+                [](llvm::FunctionPassManager &PM,
+                   llvm::PassBuilder::OptimizationLevel Level) {
+                  PM.addPass(StoreFenceInstru());
+                });
+
+            PB.registerScalarOptimizerLateEPCallback(
+                [](llvm::FunctionPassManager &PM,
+                   llvm::PassBuilder::OptimizationLevel Level) {
+                  PM.addPass(FlushInstru());
+                });
+          }};
+}
+
+// #ifndef LLVM_INSTRU_LINK_INTO_TOOLS
+extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo
+llvmGetPassPluginInfo() {
+  return getInstruPluginInfo();
+}
+// #endif
