@@ -26,17 +26,34 @@ ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff
 
 #define PROC_NAME "squint"
 
+// #if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
+#define HAVE_PROC_OPS
+// #endif
+
 
 // https://www.kernel.org/doc/htmldocs/kernel-api/API-DECLARE-KFIFO-PTR.html
 static DECLARE_KFIFO_PTR(squint_dev, unsigned char);
 spinlock_t lock;
 
 // Declare interface to interact with virtual filesystem
-struct file_operations SquintDeviceOps = {
-	.owner = 	THIS_MODULE,
-	.read = 	SquintDeviceRead,
-	.llseek = 	noop_llseek
+// struct file_operations SquintDeviceOps = {
+// 	.owner = 	THIS_MODULE,
+// 	.read = 	SquintDeviceRead,
+// 	.llseek = 	noop_llseek
+// };
+
+#ifdef HAVE_PROC_OPS
+static const struct proc_ops SquintDeviceOps = {
+  .proc_read = SquintDeviceRead,
+  .proc_lseek = noop_llseek
 };
+#else
+static const struct file_operations SquintDeviceOps = {
+  .owner = THIS_MODULE,
+  .read = SquintDeviceRead,
+  .llseek = noop_llseek
+};
+#endif
 
 // the user interface to read metadata from kfifo
 ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff_t *ppos) {
@@ -89,8 +106,10 @@ void write_fence_trace(void) {
 }
 EXPORT_SYMBOL(write_fence_trace);
 
-void write_store_trace(void) {
-    squint_fifo_write("store\n");
+void write_store_trace(unsigned long addr) {
+	char buf[40];
+	snprintf(buf, 40, "store: %lu\n", addr);
+    squint_fifo_write(buf);
 }
 EXPORT_SYMBOL(write_store_trace);
 
