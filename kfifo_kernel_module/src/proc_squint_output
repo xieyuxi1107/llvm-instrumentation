@@ -1,0 +1,48 @@
+@ store: 18446744072639725568
+[<ffffffffc03b5110>] print_trace+0x40/0xe0 [squint_module]
+[<ffffffffc03b52ca>] write_store_trace+0x7a/0x98 [squint_module]
+[<ffffffffc03ba041>] print_trace_addr+0x11/0x20 [my_test_instrument]
+[<ffffffffc03bf025>] init_module+0x25/0x1000 [my_test_instrument]
+[<ffffffff9d403928>] do_one_initcall+0x48/0x1d0
+[<ffffffff9d55b012>] do_init_module+0x62/0x250
+[<ffffffff9d55d833>] load_module+0x2503/0x2730
+[<ffffffff9d55dd2f>] __do_sys_finit_module+0xbf/0x120
+[<ffffffff9d55ddaa>] __x64_sys_finit_module+0x1a/0x20
+[<ffffffff9dfd3d4b>] do_syscall_64+0x3b/0xc0
+[<ffffffff9e00007c>] entry_SYSCALL_64_after_hwframe+0x44/0xae
+@ store: 18446744072639725572
+[<ffffffffc03b5110>] print_trace+0x40/0xe0 [squint_module]
+[<ffffffffc03b52ca>] write_store_trace+0x7a/0x98 [squint_module]
+[<ffffffffc03ba041>] print_trace_addr+0x11/0x20 [my_test_instrument]
+[<ffffffffc03bf03d>] init_module+0x3d/0x1000 [my_test_instrument]
+[<ffffffff9d403928>] do_one_initcall+0x48/0x1d0
+[<ffffffff9d55b012>] do_init_module+0x62/0x250
+[<ffffffff9d55d833>] load_module+0x2503/0x2730
+[<ffffffff9d55dd2f>] __do_sys_finit_module+0xbf/0x120
+[<ffffffff9d55ddaa>] __x64_sys_finit_module+0x1a/0x20
+[<ffffffff9dfd3d4b>] do_syscall_64+0x3b/0xc0
+[<ffffffff9e00007c>] entry_SYSCALL_64_after_hwframe+0x44/0xae
+@ flush
+[<ffffffffc03b5110>] print_trace+0x40/0xe0 [squint_module]
+[<ffffffffc03b51f5>] write_flush_trace+0x45/0x50 [squint_module]
+[<ffffffffc03ba01f>] print_trace+0x1f/0x30 [my_test_instrument]
+[<ffffffffc03bf064>] init_module+0x64/0x1000 [my_test_instrument]
+[<ffffffff9d403928>] do_one_initcall+0x48/0x1d0
+[<ffffffff9d55b012>] do_init_module+0x62/0x250
+[<ffffffff9d55d833>] load_module+0x2503/0x2730
+[<ffffffff9d55dd2f>] __do_sys_finit_module+0xbf/0x120
+[<ffffffff9d55ddaa>] __x64_sys_finit_module+0x1a/0x20
+[<ffffffff9dfd3d4b>] do_syscall_64+0x3b/0xc0
+[<ffffffff9e00007c>] entry_SYSCALL_64_after_hwframe+0x44/0xae
+@ flush
+[<ffffffffc03b5110>] print_trace+0x40/0xe0 [squint_module]
+[<ffffffffc03b51f5>] write_flush_trace+0x45/0x50 [squint_module]
+[<ffffffffc03ba01f>] print_trace+0x1f/0x30 [my_test_instrument]
+[<ffffffffc03bf07c>] init_module+0x7c/0x1000 [my_test_instrument]
+[<ffffffff9d403928>] do_one_initcall+0x48/0x1d0
+[<ffffffff9d55b012>] do_init_module+0x62/0x250
+[<ffffffff9d55d833>] load_module+0x2503/0x2730
+[<ffffffff9d55dd2f>] __do_sys_finit_module+0xbf/0x120
+[<ffffffff9d55ddaa>] __x64_sys_finit_module+0x1a/0x20
+[<ffffffff9dfd3d4b>] do_syscall_64+0x3b/0xc0
+[<ffffffff9e00007c>] entry_SYSCALL_64_after_hwframe+0x44/0xae

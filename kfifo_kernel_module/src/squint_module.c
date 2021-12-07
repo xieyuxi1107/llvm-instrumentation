@@ -12,6 +12,7 @@ A lot of this code is derived from PMTest's kernel_module.c and kernel_module.h
 #include <linux/sched.h>
 #include <linux/spinlock.h>
 #include <linux/string.h>
+#include <linux/stacktrace.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Team");
@@ -21,7 +22,8 @@ MODULE_VERSION("0.01");
 ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff_t *ppos);
 
 // the number of elements in the fifo, this must be a power of 2
-#define KFIFO_LEN 1024
+// TODO: xieyuxi this may still be too small for holding all trace info
+#define KFIFO_LEN 16384
 #define KFIFO_THRESHOLD_LEN (KFIFO_LEN / 2)
 
 #define PROC_NAME "squint"
@@ -54,6 +56,8 @@ static const struct file_operations SquintDeviceOps = {
   .llseek = noop_llseek
 };
 #endif
+
+// int HOW_MANY_ENTRIES_TO_STORE = 32; 
 
 // the user interface to read metadata from kfifo
 ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff_t *ppos) {
@@ -96,20 +100,34 @@ void squint_fifo_write(char *input) {
     kfifo_in_spinlocked(&squint_dev, input, strlen(input), &lock);
 }
 
+void print_trace(void){
+	unsigned long stack_entries[32];
+	unsigned int len = stack_trace_save(&stack_entries[0], 32, 0);
+	int i = 0;
+	for (; i < len; i++) {
+		char buf[200];
+		snprintf(buf, 200, "[<%px>] %pS\n", (void *) stack_entries[i], (void *) stack_entries[i]);
+		squint_fifo_write(buf);
+	}
+}
+
 void write_flush_trace(void) {
-    squint_fifo_write("flush\n");
+    squint_fifo_write("@ flush\n");
+	print_trace();
 }
 EXPORT_SYMBOL(write_flush_trace);
 
 void write_fence_trace(void) {
-    squint_fifo_write("fence\n");
+    squint_fifo_write("@ fence\n");
+	print_trace();
 }
 EXPORT_SYMBOL(write_fence_trace);
 
 void write_store_trace(unsigned long addr) {
 	char buf[40];
-	snprintf(buf, 40, "store: %lu\n", addr);
+	snprintf(buf, 40, "@ store: %lu\n", addr);
     squint_fifo_write(buf);
+	print_trace();
 }
 EXPORT_SYMBOL(write_store_trace);
 
