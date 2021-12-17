@@ -1,0 +1,3 @@
+0x00000000	write_store_trace	/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module	EXPORT_SYMBOL
+0x00000000	write_fence_trace	/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module	EXPORT_SYMBOL
+0x00000000	write_flush_trace	/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module	EXPORT_SYMBOL

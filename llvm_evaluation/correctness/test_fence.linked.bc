@@ -1,0 +1,130 @@
+; ModuleID = 'llvm-link'
+source_filename = "llvm-link"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+%"struct.std::atomic" = type { %"struct.std::__atomic_base" }
+%"struct.std::__atomic_base" = type { i8 }
+
+@.str = private unnamed_addr constant [28 x i8] c"xieyuxi: print_fence_trace\0A\00", align 1
+@.str.1 = private unnamed_addr constant [35 x i8] c"xieyuxi: print_flush_trace for %lu\00", align 1
+@.str.2 = private unnamed_addr constant [49 x i8] c"xieyuxi: print_store_trace for %lu with size %d\0A\00", align 1
+@x = dso_local global i32 0, align 4
+@y = dso_local global i32 0, align 4
+@ready = dso_local global %"struct.std::atomic" zeroinitializer, align 1
+@.str.3 = private unnamed_addr constant [18 x i8] c"flush_pm called \0A\00", align 1
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local void @write_fence_trace_wrapper() #0 {
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str, i64 0, i64 0))
+  ret void
+}
+
+declare dso_local i32 @printf(i8*, ...) #1
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local void @write_flush_trace_wrapper(i64 %0) #0 {
+  %2 = alloca i64, align 8
+  store i64 %0, i64* %2, align 8
+  %3 = load i64, i64* %2, align 8
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.1, i64 0, i64 0), i64 %3)
+  ret void
+}
+
+; Function Attrs: noinline nounwind optnone uwtable
+define dso_local void @write_store_trace_wrapper(i64 %0, i32 %1) #0 {
+  %3 = alloca i64, align 8
+  %4 = alloca i32, align 4
+  store i64 %0, i64* %3, align 8
+  store i32 %1, i32* %4, align 4
+  %5 = load i64, i64* %3, align 8
+  %6 = load i32, i32* %4, align 4
+  %7 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([49 x i8], [49 x i8]* @.str.2, i64 0, i64 0), i64 %5, i32 %6)
+  ret void
+}
+
+; Function Attrs: noinline optnone uwtable
+define dso_local void @_Z12nvdimm_flushRi(i32* nonnull align 4 dereferenceable(4) %0) #2 {
+  %2 = alloca i32*, align 8
+  store i32* %0, i32** %2, align 8
+  %3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.3, i64 0, i64 0))
+  ret void
+}
+
+; Function Attrs: noinline optnone uwtable
+define dso_local void @_Z14volatile_flushRi(i32* nonnull align 4 dereferenceable(4) %0) #2 {
+  %2 = alloca i32*, align 8
+  store i32* %0, i32** %2, align 8
+  %3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.3, i64 0, i64 0))
+  ret void
+}
+
+; Function Attrs: noinline optnone uwtable
+define dso_local void @_Z3usev() #2 {
+  %1 = alloca i32, align 4
+  store i32 2, i32* @x, align 4
+  call void @_Z14volatile_flushRi(i32* nonnull align 4 dereferenceable(4) @x)
+  %2 = load i32, i32* @x, align 4
+  %3 = icmp eq i32 %2, 1
+  br i1 %3, label %4, label %11
+
+4:                                                ; preds = %0
+  store i32 2, i32* %1, align 4
+  %5 = load i32, i32* %1, align 4
+  switch i32 %5, label %10 [
+    i32 1, label %6
+    i32 2, label %6
+    i32 3, label %7
+    i32 4, label %8
+    i32 5, label %9
+  ]
+
+6:                                                ; preds = %4, %4
+  fence acquire
+  br label %10
+
+7:                                                ; preds = %4
+  fence release
+  br label %10
+
+8:                                                ; preds = %4
+  fence acq_rel
+  br label %10
+
+9:                                                ; preds = %4
+  fence seq_cst
+  br label %10
+
+10:                                               ; preds = %4, %6, %7, %8, %9
+  br label %12
+
+11:                                               ; preds = %0
+  call void @_Z12nvdimm_flushRi(i32* nonnull align 4 dereferenceable(4) @x)
+  br label %12
+
+12:                                               ; preds = %11, %10
+  ret void
+}
+
+; Function Attrs: noinline norecurse optnone uwtable
+define dso_local i32 @main(i32 %0, i8** %1) #3 {
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i8**, align 8
+  store i32 0, i32* %3, align 4
+  store i32 %0, i32* %4, align 4
+  store i8** %1, i8*** %5, align 8
+  call void @_Z3usev()
+  ret i32 0
+}
+
+attributes #0 = { noinline nounwind optnone uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noinline optnone uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { noinline norecurse optnone uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.ident = !{!0, !0}
+!llvm.module.flags = !{!1}
+
+!0 = !{!"Ubuntu clang version 11.0.0-2~ubuntu20.04.1"}
+!1 = !{i32 1, !"wchar_size", i32 4}

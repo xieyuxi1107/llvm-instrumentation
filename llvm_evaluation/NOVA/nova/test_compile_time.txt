@@ -1,0 +1,160 @@
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.646s
+user	0m20.503s
+sys	0m5.370s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.878s
+user	0m20.681s
+sys	0m5.361s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m26.130s
+user	0m20.982s
+sys	0m5.330s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m26.494s
+user	0m21.162s
+sys	0m5.526s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.415s
+user	0m20.335s
+sys	0m5.273s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.438s
+user	0m20.255s
+sys	0m5.399s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.704s
+user	0m20.560s
+sys	0m5.373s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.426s
+user	0m20.315s
+sys	0m5.337s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.540s
+user	0m20.337s
+sys	0m5.396s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.836s
+user	0m20.685s
+sys	0m5.385s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.974s
+user	0m20.785s
+sys	0m5.387s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.748s
+user	0m20.847s
+sys	0m5.143s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.540s
+user	0m20.789s
+sys	0m4.938s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.257s
+user	0m20.524s
+sys	0m4.938s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.539s
+user	0m20.294s
+sys	0m5.417s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.691s
+user	0m20.584s
+sys	0m5.306s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m26.026s
+user	0m20.578s
+sys	0m5.620s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.414s
+user	0m20.304s
+sys	0m5.332s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.328s
+user	0m20.356s
+sys	0m5.203s
+/bin/sh: 1: -D__GENKSYMS__: not found
+WARNING: EXPORT symbol "write_flush_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_fence_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+WARNING: EXPORT symbol "write_store_trace" [/data/storage/xieyuxi/clean_start/test_nova_module/nova/squint_module.ko] version generation failed, symbol will not be versioned.
+
+real	0m25.341s
+user	0m20.287s
+sys	0m5.287s

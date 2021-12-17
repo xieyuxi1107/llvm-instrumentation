@@ -1,0 +1,1 @@
+cmd_/data/storage/xieyuxi/clean_start/test_nova_module/nova/nova.ko := ld.lld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /data/storage/xieyuxi/clean_start/test_nova_module/nova/nova.ko /data/storage/xieyuxi/clean_start/test_nova_module/nova/nova.o /data/storage/xieyuxi/clean_start/test_nova_module/nova/nova.mod.o ;  true

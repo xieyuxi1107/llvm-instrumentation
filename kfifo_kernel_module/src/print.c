@@ -19,17 +19,32 @@ extern void write_store_trace(unsigned long addr);
 //   printk(KERN_ERR "xieyuxi: print_trace for ...");
 // }
 
-void print_trace(int instr){
-  if(instr == 1){
-    write_fence_trace();
-  }
-  if(instr == 2){
-    write_flush_trace();
-  }
+void write_fence_trace_wrapper(){
+  printf("xieyuxi: print_fence_trace\n");
+  write_fence_trace();
 }
 
+void write_flush_trace_wrapper(unsigned long addr){
+  printf("xieyuxi: print_flush_trace for %lu\n", addr);
+  write_flush_trace();
+}
 
-void print_trace_addr(int instr, unsigned long addr){
-  // TODO: check addr is within pm range
+void write_store_trace_wrapper(unsigned long addr, int sz){
+  printf("xieyuxi: print_store_trace for %lu with size %d\n", addr, sz);
   write_store_trace(addr);
 }
+
+// void print_trace(int instr){
+//   if(instr == 1){
+//     write_fence_trace();
+//   }
+//   if(instr == 2){
+//     write_flush_trace();
+//   }
+// }
+
+
+// void print_trace_addr(int instr, unsigned long addr){
+//   // TODO: check addr is within pm range
+//   write_store_trace(addr);
+// }
