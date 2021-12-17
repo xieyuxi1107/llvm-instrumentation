@@ -24,7 +24,9 @@ ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff
 // the number of elements in the fifo, this must be a power of 2
 // TODO: xieyuxi this may still be too small for holding all trace info
 #define KFIFO_LEN 16384
-#define KFIFO_THRESHOLD_LEN (KFIFO_LEN / 2)
+#define KFIFO_THRESHOLD_LEN 500
+
+int asleep = 0;
 
 #define PROC_NAME "squint"
 
@@ -35,8 +37,8 @@ ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff
 
 // https://www.kernel.org/doc/htmldocs/kernel-api/API-DECLARE-KFIFO-PTR.html
 static DECLARE_KFIFO_PTR(squint_dev, unsigned char);
+DECLARE_WAIT_QUEUE_HEAD(wq);
 spinlock_t lock;
-
 // Declare interface to interact with virtual filesystem
 // struct file_operations SquintDeviceOps = {
 // 	.owner = 	THIS_MODULE,
@@ -67,6 +69,10 @@ ssize_t SquintDeviceRead(struct file *file, char __user *buf, size_t count, loff
     ret = kfifo_to_user(&squint_dev, buf, count, &copied);
 	printk(KERN_INFO "@ Squint: end reading\n");
 
+    if (asleep == 1 && kfifo_avail(&squint_dev) > KFIFO_THRESHOLD_LEN) {
+        asleep = 0;
+        wake_up_interruptible(&wq);
+    }
     return ret ? ret : copied;
 
 }
@@ -98,6 +104,12 @@ static int __init kfifo_squint_init(void) {
 
 void squint_fifo_write(char *input) {
     kfifo_in_spinlocked(&squint_dev, input, strlen(input), &lock);
+    if (kfifo_avail(&squint_dev) < KFIFO_THRESHOLD_LEN) {
+        asleep = 1;
+		wait_event_interruptible(
+			wq,
+			kfifo_avail(&squint_dev) > KFIFO_THRESHOLD_LEN);
+    }
 }
 
 void print_trace(void){
